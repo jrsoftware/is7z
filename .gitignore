@@ -1,2 +1,8 @@
 buildsettings.bat
 compilesettings.bat
+*.obj
+*.dll
+*.exp
+*.lib
+a.pch
+resource.res
