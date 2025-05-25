@@ -59,51 +59,10 @@ WIN_OBJS = \
   $O\VirtThread.obj \
 
 AR_OBJS = \
-  $O\ApfsHandler.obj \
-  $O\ApmHandler.obj \
-  $O\ArHandler.obj \
-  $O\ArjHandler.obj \
-  $O\Base64Handler.obj \
   $O\Bz2Handler.obj \
-  $O\ComHandler.obj \
-  $O\CpioHandler.obj \
-  $O\CramfsHandler.obj \
-  $O\DeflateProps.obj \
-  $O\DmgHandler.obj \
-  $O\ElfHandler.obj \
-  $O\ExtHandler.obj \
-  $O\FatHandler.obj \
-  $O\FlvHandler.obj \
   $O\GzHandler.obj \
-  $O\GptHandler.obj \
-  $O\HandlerCont.obj \
-  $O\HfsHandler.obj \
-  $O\IhexHandler.obj \
-  $O\LpHandler.obj \
-  $O\LzhHandler.obj \
   $O\LzmaHandler.obj \
-  $O\MachoHandler.obj \
-  $O\MbrHandler.obj \
-  $O\MslzHandler.obj \
-  $O\MubHandler.obj \
-  $O\NtfsHandler.obj \
-  $O\PeHandler.obj \
-  $O\PpmdHandler.obj \
-  $O\QcowHandler.obj \
-  $O\RpmHandler.obj \
-  $O\SparseHandler.obj \
-  $O\SplitHandler.obj \
-  $O\SquashfsHandler.obj \
-  $O\SwfHandler.obj \
-  $O\UefiHandler.obj \
-  $O\VdiHandler.obj \
-  $O\VhdHandler.obj \
-  $O\VhdxHandler.obj \
-  $O\VmdkHandler.obj \
-  $O\XarHandler.obj \
-  $O\XzHandler.obj \
-  $O\ZHandler.obj \
-  $O\ZstdHandler.obj \
+  $O\XzHandler.obj
 
 AR_COMMON_OBJS = \
   $O\CoderMixer2.obj \
@@ -140,21 +99,11 @@ CAB_OBJS = \
   $O\CabIn.obj \
   $O\CabRegister.obj \
 
-CHM_OBJS = \
-  $O\ChmHandler.obj \
-  $O\ChmIn.obj \
-
 ISO_OBJS = \
   $O\IsoHandler.obj \
   $O\IsoHeader.obj \
   $O\IsoIn.obj \
   $O\IsoRegister.obj \
-
-NSIS_OBJS = \
-  $O\NsisDecode.obj \
-  $O\NsisHandler.obj \
-  $O\NsisIn.obj \
-  $O\NsisRegister.obj \
 
 RAR_OBJS = \
   $O\RarHandler.obj \
@@ -168,10 +117,6 @@ TAR_OBJS = \
   $O\TarOut.obj \
   $O\TarUpdate.obj \
   $O\TarRegister.obj \
-
-UDF_OBJS = \
-  $O\UdfHandler.obj \
-  $O\UdfIn.obj \
 
 WIM_OBJS = \
   $O\WimHandler.obj \
