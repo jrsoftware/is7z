@@ -58,11 +58,25 @@ WIN_OBJS = \
   $O\UniqBlocks.obj \
   $O\VirtThread.obj \
 
+# ComHandler is for the Compound format which is used by .msi
 AR_OBJS = \
   $O\Bz2Handler.obj \
+  $O\ComHandler.obj \
+  $O\DmgHandler.obj \
   $O\GzHandler.obj \
-  $O\LzmaHandler.obj \
-  $O\XzHandler.obj
+  $O\RpmHandler.obj \
+  $O\VdiHandler.obj \
+  $O\VhdHandler.obj \
+  $O\VhdxHandler.obj \
+  $O\VmdkHandler.obj \
+  $O\XzHandler.obj \
+
+# Extra units for the selection of formats above
+AR_OBJS = $(AR_OBJS) \
+  $O\Base64Handler.obj \
+  $O\ExtHandler.obj \
+  $O\HandlerCont.obj \
+  $O\LzhHandler.obj \
 
 AR_COMMON_OBJS = \
   $O\CoderMixer2.obj \
