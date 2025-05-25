@@ -35,7 +35,7 @@ if errorlevel 1 goto failed
 echo Compiling done
 
 echo - Copying  to issrc\Files
-copy Cpp\7zip\Bundles\Format7zF\o\7z.dll "%ISSRCROOT%\Files\is7z.dll"
+copy Cpp\7zip\Bundles\Format7zFInno\o\7z.dll "%ISSRCROOT%\Files\is7z.dll"
 copy Cpp\7zip\Bundles\Format7zExtract\o\7zxa.dll "%ISSRCROOT%\Files\is7zxa.dll"
 copy Cpp\7zip\Bundles\Format7zExtractR\o\7zxr.dll "%ISSRCROOT%\Files\is7zxr.dll"
 if errorlevel 1 goto failed

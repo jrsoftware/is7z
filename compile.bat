@@ -32,8 +32,8 @@ call "%VSTOOLSROOT%\VsDevCmd.bat"
 if errorlevel 1 goto exit
 echo.
 
-echo - Compiling 7z.dll
-cd Cpp\7zip\Bundles\Format7zF
+echo - Compiling 7z.dll (Inno Setup version)
+cd Cpp\7zip\Bundles\Format7zFInno
 if errorlevel 1 goto exit
 if "%1"=="noclean" goto noclean
 nmake -s clean

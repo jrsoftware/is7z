@@ -255,6 +255,7 @@ Windows           common files for Windows related code
     Format7zR           7zr.dll:  .7z support, reduced version
     Format7zExtractR    7zxr.dll: .7z support, reduced version, extracting only
     Format7zF           7z.dll:   all formats
+    Format7zFInno       7z.dll:   .7z, .zip, .gz, .bz2, .xz, .tar, .rar, .iso, .msi, .cab, .rpm, .vhd, .vhdx, .vdi, .vmdk, .wim, .dmg support, no external codecs
     LzmaCon       lzma.exe: LZMA compression/decompression
     SFXCon        7zCon.sfx: Console 7z SFX module
     SFXWin        7z.sfx: Windows 7z SFX module
