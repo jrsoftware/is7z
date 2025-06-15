@@ -59,12 +59,14 @@ WIN_OBJS = \
   $O\VirtThread.obj \
 
 # ComHandler is for the Compound format which is used by .msi
+# SplitHandler is for multi-volume archives
 AR_OBJS = \
   $O\Bz2Handler.obj \
   $O\ComHandler.obj \
   $O\DmgHandler.obj \
   $O\GzHandler.obj \
   $O\RpmHandler.obj \
+  $O\SplitHandler.obj \
   $O\VdiHandler.obj \
   $O\VhdHandler.obj \
   $O\VhdxHandler.obj \
