@@ -4,7 +4,7 @@
     - .7z, .zip, .gz, .bz2, .xz, .tar, .rar, .iso, .msi, .cab, .rpm, .vhd, .vhdx, .vdi, .vmdk, .wim, .dmg, .lzh, .ext, .001
   - No icons.
   - No external codecs support.
-  - 0.94 mB instead of 1.35 mB.
+  - 0.94 MB instead of 1.35 MB.
 - Added batch files for compilation of 7z.dll (based on the above), 7zxa.dll, and 7zxr.dll.
 
 Signed versions of these DLL files can be downloaded from the issrc repository, renamed as is7z.dll, etcetera.
