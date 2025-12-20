@@ -9,33 +9,39 @@ rem  Batch file to compile 7z.dll, 7zxa.dll, and 7zxr.dll
 
 setlocal
 
+if "%1"=="x86" goto archfound
+if "%1"=="x64" goto archfound
+echo Architecture parameter is missing or invalid. Must be "x86" or "x64".
+goto failed2
+:archfound
+
 if exist compilesettings.bat goto compilesettingsfound
 :compilesettingserror
 echo compilesettings.bat is missing or incomplete. It needs to be created
 echo with the following line, adjusted for your system:
 echo.
-echo   set VSTOOLSROOT=C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools
+echo   set VSBUILDROOT=c:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build
 goto failed2
 
 :compilesettingsfound
-set VSTOOLSROOT=
+set VSBUILDROOT=
 call .\compilesettings.bat
-if "%VSTOOLSROOT%"=="" goto compilesettingserror
+if "%VSBUILDROOT%"=="" goto compilesettingserror
 
 rem -------------------------------------------------------------------------
 
 set __VSCMD_ARG_NO_LOGO=1
 set VSCMD_SKIP_SENDTELEMETRY=1
 
-echo - Calling VsDevCmd.bat
-call "%VSTOOLSROOT%\VsDevCmd.bat"
+echo - Calling vcvarsall.bat %1
+call "%VSBUILDROOT%\vcvarsall.bat " %1
 if errorlevel 1 goto exit
 echo.
 
 echo - Compiling 7z.dll (Inno Setup version)
 cd Cpp\7zip\Bundles\Format7zFInno
 if errorlevel 1 goto exit
-if "%1"=="noclean" goto noclean
+if "%2"=="noclean" goto noclean
 nmake -s clean
 if errorlevel 1 goto failed
 :noclean
@@ -45,7 +51,7 @@ if errorlevel 1 goto failed
 echo - Compiling 7zxa.dll
 cd ..\Format7zExtract
 if errorlevel 1 goto exit
-if "%1"=="noclean" goto noclean
+if "%2"=="noclean" goto noclean
 nmake -s clean
 if errorlevel 1 goto failed
 :noclean
@@ -55,7 +61,7 @@ if errorlevel 1 goto failed
 echo - Compiling 7zxr.dll
 cd ..\Format7zExtractR
 if errorlevel 1 goto exit
-if "%1"=="noclean" goto noclean
+if "%2"=="noclean" goto noclean
 nmake -s clean
 if errorlevel 1 goto failed
 :noclean

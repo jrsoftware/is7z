@@ -5,8 +5,8 @@
   - Rar support includes RAR5.
   - No icons.
   - No external codecs support.
-  - 0.94 MB instead of 1.35 MB.
-- Added batch files for compilation of 7z.dll (based on the above), 7zxa.dll, and 7zxr.dll.
+  - 0.94 MB instead of 1.35 MB for the x86 version.
+- Added batch files for compilation of x86 and x64 7z.dll (based on the above), 7zxa.dll, and 7zxr.dll.
 
 Signed versions of these DLL files can be downloaded from the issrc repository, renamed as is7z.dll, etcetera.
 
