@@ -34,7 +34,7 @@ set __VSCMD_ARG_NO_LOGO=1
 set VSCMD_SKIP_SENDTELEMETRY=1
 
 echo - Calling vcvarsall.bat %1
-call "%VSBUILDROOT%\vcvarsall.bat " %1
+call "%VSBUILDROOT%\vcvarsall.bat" %1
 if errorlevel 1 goto exit
 echo.
 
