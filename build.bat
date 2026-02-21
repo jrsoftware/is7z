@@ -1,7 +1,7 @@
 @echo off
 
 rem  Inno Setup
-rem  Copyright (C) 1997-2025 Jordan Russell
+rem  Copyright (C) 1997-2026 Jordan Russell
 rem  Portions by Martijn Laan
 rem  For conditions of distribution and use, see LICENSE.TXT.
 rem
@@ -11,7 +11,7 @@ rem  This batch files does the following things:
 rem  -Compile x86 7z.dll, 7zxa.dll, and 7zxr.dll
 rem  -Compile x64 7z.dll, 7zxa.dll, and 7zxr.dll
 rem  -Copy them to issrc Files
-rem  -Synch them to issrc Projects\Bin
+rem  -Synch them to issrc Projects\Bin (optional)
 
 setlocal
 
@@ -51,15 +51,16 @@ copy Cpp\7zip\Bundles\Format7zExtract\x64\7zxa.dll "%ISSRCROOT%\Files\is7zxa-x64
 if errorlevel 1 goto failed
 copy Cpp\7zip\Bundles\Format7zExtractR\x64\7zxr.dll "%ISSRCROOT%\Files\is7zxr-x64.dll"
 if errorlevel 1 goto failed
+if "%1"=="nosynch" goto nosynch
+if "%2"=="nosynch" goto nosynch
 call "%ISSRCROOT%\Projects\Bin\synch-isfiles.bat" nopause
 if errorlevel 1 goto failed
+:nosynch
 
 echo All done!
-pause
 exit /b 0
 
 :failed
 echo *** FAILED ***
-pause
 :failed2
 exit /b 1
