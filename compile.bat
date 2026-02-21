@@ -40,12 +40,12 @@ set VSCMD_SKIP_SENDTELEMETRY=1
 
 echo - Calling vcvarsall.bat %vsarch%
 call "%VSBUILDROOT%\vcvarsall.bat" %vsarch%
-if errorlevel 1 goto exit
+if errorlevel 1 goto failed
 echo.
 
 echo - Compiling 7z.dll (Inno Setup version)
 cd Cpp\7zip\Bundles\Format7zFInno
-if errorlevel 1 goto exit
+if errorlevel 1 goto failed
 if "%2"=="noclean" goto noclean
 nmake -s clean
 if errorlevel 1 goto failed
@@ -55,7 +55,7 @@ if errorlevel 1 goto failed
 
 echo - Compiling 7zxa.dll
 cd ..\Format7zExtract
-if errorlevel 1 goto exit
+if errorlevel 1 goto failed
 if "%2"=="noclean" goto noclean
 nmake -s clean
 if errorlevel 1 goto failed
@@ -65,7 +65,7 @@ if errorlevel 1 goto failed
 
 echo - Compiling 7zxr.dll
 cd ..\Format7zExtractR
-if errorlevel 1 goto exit
+if errorlevel 1 goto failed
 if "%2"=="noclean" goto noclean
 nmake -s clean
 if errorlevel 1 goto failed
