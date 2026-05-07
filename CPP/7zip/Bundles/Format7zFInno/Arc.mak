@@ -72,6 +72,7 @@ AR_OBJS = \
   $O\VhdxHandler.obj \
   $O\VmdkHandler.obj \
   $O\XzHandler.obj \
+  $O\ZstdHandler.obj \
 
 # Extra units for the selection of formats above
 AR_OBJS = $(AR_OBJS) \
