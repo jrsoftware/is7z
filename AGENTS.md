@@ -41,6 +41,10 @@ The shared build system is in `CPP/7zip/7zip.mak`. Architecture-specific assembl
 
 The C source in `C/` provides core compression algorithms (LZMA, LZMA2, Ppmd, AES, etc.). The C++ source in `CPP/` provides the archive handlers, UI, and codec framework.
 
+## Inno Setup-specific changes
+
+See the `README.md` file for a list of modifications.
+
 ## Updating from upstream
 
 Upstream releases are imported as zip archives. After merging, verify that `Format7zFInno/Arc.mak` still has the correct subset of formats — new formats added upstream to `Format7zF/Arc.mak` should be evaluated for inclusion.
