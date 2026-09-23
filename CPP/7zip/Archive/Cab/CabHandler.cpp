@@ -1059,6 +1059,7 @@ Z7_COM7F_IMF(CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       bool keepHistory = false;
       bool keepInputBuffer = false;
       bool thereWasNotAlignedChunk = false;
+      bool needSeek = true;
 
       // printf(" -locFolderIndex=%5i\n", locFolderIndex);
       
@@ -1080,8 +1081,9 @@ Z7_COM7F_IMF(CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         }
         const CFolder &folder2 = db2.Folders[(unsigned)locFolderIndex];
         
-        if (bl == 0)
+        if (needSeek)
         {
+          needSeek = false;
           RINOK(InStream_SeekSet(db2.Stream, db2.StartPosition + folder2.DataStart))
         }
         
@@ -1101,6 +1103,7 @@ Z7_COM7F_IMF(CHandler::Extract(const UInt32 *indices, UInt32 numItems,
             // printf(" -volIndex=%5u\n", volIndex);
             locFolderIndex = 0;
             bl = 0;
+            needSeek = true;
             continue;
           }
         }

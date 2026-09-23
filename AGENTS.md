@@ -7,7 +7,7 @@ This is a fork of 7-Zip (upstream: `jrsoftware/7zip`) with modifications for Inn
 - **7zxa.dll** (via `Format7zExtract`) — extract-only, 7z format only
 - **7zxr.dll** (via `Format7zExtractR`) — extract-only, 7z format only, no crypto
 
-The Inno Setup-specific code lives in `CPP/7zip/Bundles/Format7zFInno/`. Everything else is upstream 7-Zip source.
+The Inno Setup-specific code lives in `CPP/7zip/Bundles/Format7zFInno/`.
 
 ## Build
 
@@ -48,3 +48,5 @@ See the `README.md` file for a list of modifications.
 ## Updating from upstream
 
 Upstream releases are imported as zip archives. After merging, verify that `Format7zFInno/Arc.mak` still has the correct subset of formats — new formats added upstream to `Format7zF/Arc.mak` should be evaluated for inclusion.
+
+Also check any fix to upstream source that `README.md` may list. If upstream fixed the problem, remove the local fix. If upstream changed the code around it, make sure the fix still applies.
